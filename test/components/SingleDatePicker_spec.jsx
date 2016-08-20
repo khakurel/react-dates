@@ -401,6 +401,10 @@ describe('SingleDatePicker', () => {
   });
 
   describe('#isBlocked', () => {
+    afterEach(() => {
+      sinon.restore();
+    });
+
     it('returns true if props.isDayBlocked returns true', () => {
       const isDayBlockedStub = sinon.stub().returns(true);
       sinon.stub(SingleDatePicker.prototype, 'isPastDate').returns(false);
